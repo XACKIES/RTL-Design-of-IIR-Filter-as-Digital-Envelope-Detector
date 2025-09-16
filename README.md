@@ -1,6 +1,6 @@
 # RTL-Design-of-IIR-Filter-as-Digital-Envelope-Detector
 
-## 📌 Overview
+##  Overview
 This project implements a **Digital Envelope Detector** in Verilog using a **first-order IIR Low-Pass filter**. The detector tracks the envelope (magnitude variation) of an input signal, which is useful in RF/communication systems, AM demodulation, and signal detection.
 
 The design uses **Q1.15 fixed-point arithmetic** for efficient hardware implementation.
@@ -17,7 +17,7 @@ The design uses **Q1.15 fixed-point arithmetic** for efficient hardware implemen
 
 
 ---
-## ⚙️ Module Description
+##  Module Description
 ```verilog
 module Envelope_Detector #(
     parameter DATA_WIDTH = 32,
@@ -30,7 +30,7 @@ module Envelope_Detector #(
 );
 ```
 
-### 🔹 Key Steps
+###  Key Steps
 1. **Absolute value** of input (`|x[n]|`)
 2. **Recursive filter**:
 
@@ -43,7 +43,7 @@ y[n] = (1 - α) · y[n-1] + α · |x[n]|
 
 ---
 
-## 🧮 Mathematical Proof
+##  Mathematical Proof
 
 ### 1. Analog RC Low-Pass
 The classical analog RC low-pass filter is:
@@ -79,7 +79,7 @@ Where:
 
 ---
 
-## 📡 Applications
+##  Applications
 
 - **AM Demodulation**  
   Extracting the audio envelope from an AM radio carrier.
@@ -99,7 +99,7 @@ Where:
 
 ---
 
-## 🚀 Future Extensions
+##  Future Extensions
 - **Adaptive ALPHA**: Dynamically adjust filter speed based on signal conditions.  
 - **Multi-Channel Envelope Detector**: For MIMO or array processing.  
 - **Integration with FFT-based Spectrum Analysis**: Envelope outputs could feed into energy detectors for wireless protocols.  
